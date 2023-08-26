@@ -1,10 +1,24 @@
 server:
   port: 8083
 spring:
+  application:
+    name: ms-fraud-service
   datasource:
-    url: jdbc:h2:mem:fraud
-    username: sa
-    password:
-    driverClassName: org.h2.Driver
+    username: 'postgres'
+    password: 'postgres'
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/card-database-postgres
   jpa:
-    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
+      hibernate.format_sql: true
+      hibernate.show-sql: true
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+    registry-with-eureka: true
+    fetch-registry: true
