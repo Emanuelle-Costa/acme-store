@@ -16,6 +16,7 @@
       <module>perform-credit-assessment-service</module>
       <module>service-discovery</module>
     <module>service-discovery</module>
+      <module>gateway-service</module>
   </modules>
 
   <properties>
@@ -73,11 +74,6 @@
       <version>${spring-cloud-version}</version>
       <type>pom</type>
       <scope>import</scope>
-    </dependency>
-
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-web</artifactId>
     </dependency>
 
     <dependency>
